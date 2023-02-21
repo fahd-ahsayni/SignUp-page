@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+
+                }
+            }
+        }
+    </script>
+
+    <style type="text/tailwindcss">
+        @layer components {
+            .section-form {
+                @apply md:h-screen w-full
+            }
+            .section-form > .content {
+                @apply container py-12 px-6 h-full
+            }
+            .form-container {
+                @apply flex justify-center items-center flex-wrap h-full text-gray-800
+            }
+            .left-box {
+                @apply block bg-white shadow-lg rounded-lg
+            }
+            .left-box > .desktop-box {
+                @apply lg:flex lg:flex-wrap
+            }
+            .left-box > .desktop-box > .laptop-box {
+                @apply lg:w-6/12 px-4 md:px-0
+            }
+            .left-box > .desktop-box > .laptop-box > .tablet-box {
+                @apply md:p-12 md:mx-6
+            }
+            .form-brand {
+                @apply text-center
+            }
+            .form-header > img {
+                @apply mx-auto w-48
+            }
+            .form-header > h4 {
+                @apply text-3xl font-semibold mt-1 mb-12 pb-1 text-center text-gray-800 capitalize
+            }
+
+            /* FORM STYLE START */
+            form > p {
+                @apply mb-2 font-medium text-sm text-gray-700
+            }
+            .input-group {
+                @apply mb-4
+            }
+            .input-group > input {
+                @apply border border-gray-300 px-3 py-1.5 rounded shadow-sm w-full mt-2
+                        focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500
+            }
+            .login-btn {
+                @apply text-center pt-1 mb-12 pb-1
+            }
+            .login-btn > input {
+                @apply px-6 py-2.5 text-white font-medium rounded focus:outline-none focus:ring-1 cursor-pointer
+                        focus:ring-blue-300 transition duration-150 ease-in-out w-full mb-3 bg-cyan-600 hover:bg-cyan-500
+            }
+            .login-btn > a {
+                @apply text-gray-500 hover:text-gray-700 font-medium text-sm
+            }
+            .form-footer {
+                @apply flex items-center justify-between pb-6
+            }
+            .form-footer > a {
+                @apply text-gray-700 text-sm font-medium mr-2
+            }
+            .form-footer > a > span {
+                @apply text-cyan-600 hover:text-cyan-400
+            }
+            /* FORM STYLE END */
+
+            .right-box {
+                @apply lg:w-6/12 flex items-center lg:rounded-r-lg rounded-b-lg lg:rounded-bl-none bg-gradient-to-br
+                       from-cyan-400 via-cyan-500 to-cyan-600 selection:bg-slate-700 selection:text-sky-50
+            }
+            .right-box > div {
+                @apply text-white px-4 py-6 md:p-12 md:mx-6
+            }
+            .right-box > div > h4 {
+                @apply text-xl mb-6 text-cyan-50
+            }
+            .right-box > div > ul > li {
+                @apply flex lg:ml-8 bg-white/80 p-4 rounded shadow-md filter backdrop-blur-lg
+                mb-4
+            }
+            .icon {
+                @apply text-2xl mr-4 mt-1
+            }
+            .icon-amber {
+                @apply text-amber-500
+            }
+            .icon-green {
+                @apply text-green-500
+            }
+            .icon-purple {
+                @apply text-purple-500
+            }
+            .right-box > div > ul > li > div > h4 {
+                @apply  font-bold text-gray-600 capitalize
+            }
+            .right-box > div > ul > li > div > p {
+                @apply text-gray-600
+            }
+        }
+    </style>
+
+</head>
+
+<body class="container mx-auto bg-zinc-50" >
+
+    <section class="section-form">
+        <div class="content">
+            <div class="form-container">
+                <div class="xl:w-10/12">
+
+                    <!-- ?LEFT START -->
+                    <div class="left-box">
+                        <div class="desktop-box">
+                            <div class="laptop-box">
+                                <div class="tablet-box">
+
+                                    <!-- ?LOGO -->
+                                    <div class="form-header">                                            
+                                        <img src="tailwind.png"nalt="logo" />
+                                        <h4>this form designed by fahd</h4>
+                                    </div>
+
+                                    <!-- TODO : FORM START -->
+                                    <form>
+                                        <p>Please login to your account</p>
+                                        <div class="input-group">
+                                            <input type="text" placeholder="Username" />
+                                        </div>
+                                        <div class="input-group">
+                                            <input type="password" placeholder="Password" />
+                                        </div>
+                                        <div class="login-btn">
+                                            <input type="submit" value="Login in">
+                                            <a href="#">Forgot password?</a>
+                                        </div>
+                                        <div class="form-footer">
+                                            <a href="#">Don't have an <span>account</span> ?</a>
+                                        </div>
+                                    </form>
+                                    <!-- TODO : FORM END -->
+
+                                </div>
+                            </div>
+                            <!-- ?LEFT END -->
+
+                            <!-- ?RIGHT START -->
+                            <div class="right-box">
+                                <div>
+                                    <h4>We are more than just a company</h4>
+                                    <ul>
+                                        <li>
+                                            <ion-icon class="icon icon-amber" name="location-sharp"></ion-icon>
+                                            <div>
+                                                <h4>Beautiful waterfront location</h4>
+                                                <p>98% of recent guests gove this location a 5-star review.</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <ion-icon class="icon icon-green" name="key-sharp"></ion-icon>
+                                            <div>
+                                                <h4>fast check-in experince</h4>
+                                                <p>95% of recent guests gave the check-in experience a 5-star review.</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <ion-icon class="icon icon-purple" name="car-sport-sharp"></ion-icon>
+                                            <div>
+                                                <h4>free secure parking</h4>
+                                                <p>This property features a single lock-up garage white storage.</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- ?RIGHT START -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
